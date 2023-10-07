@@ -1,0 +1,337 @@
+%   11/11/92 211121724  MEMBER NAME  REPORT1  (TEXFILES) M  TEX
+%format: latex    %hyphen: English
+%\documentstyle[11pt,leqno,epsfig]{note}
+%\documentstyle[11pt,epsfig]{note}
+%\documentstyle[11pt,epsfig,pstimes,psmath]{note}
+%\documentstyle[epsf]{article}
+ 
+%\documentclass{article}
+\documentclass[epsf]{article}
+
+\font\twelverm=cmr12
+\font\twelvebf=cmbx12
+\font\tenbf=cmbx10
+\font\tenrm=cmr10
+\font\tenit=cmti10
+\font\twelveit=cmti12
+\font\elevenbf=cmbx10 scaled\magstep 1
+\font\elevenrm=cmr10 scaled\magstep 1
+\font\elevenit=cmti10 scaled\magstep 1
+\font\ninebf=cmbx9
+\font\ninerm=cmr9
+\font\nineit=cmti9
+\font\eightbf=cmbx8
+\font\eightrm=cmr8
+\font\eightit=cmti8
+\font\sevenrm=cmr7
+
+%\usepackage{amsmath,amssymb,latexsym} 
+\usepackage{amsmath,amssymb,latexsym,hyperref} 
+\usepackage{easybmat,graphicx}
+\usepackage{multirow,bigdelim}
+\usepackage{caption}
+\usepackage{subcaption}
+%\input ../inputs/epsf.tex
+
+\newcommand*\hexbrace[2]{%
+  \underset{#2}{\underbrace{\rule{#1}{0pt}}}}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+%\hypersetup{
+%    bookmarks=true,         % show bookmarks bar?
+%    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+%    pdftoolbar=true,        % show Acrobat’s toolbar?
+%    pdfmenubar=true,        % show Acrobat’s menu?
+%    pdffitwindow=false,     % window fit to page when opened
+%    pdfstartview={FitH},    % fits the width of the page to the window
+%    pdftitle={My title},    % title
+%    pdfauthor={Author},     % author
+%    pdfsubject={Subject},   % subject of the document
+%    pdfcreator={Creator},   % creator of the document
+%    pdfproducer={Producer}, % producer of the document
+%    pdfkeywords={keyword1, key2, key3}, % list of keywords
+%    pdfnewwindow=true,      % links in new PDF window
+%    colorlinks=true,       % false: boxed links; true: colored links
+%    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+%    citecolor=green,        % color of links to bibliography
+%    filecolor=magenta,      % color of file links
+%    urlcolor=cyan           % color of external links
+%}
+
+%
+%  `pstimes.sty' sets \rm to be Times, and `psmath.sty' sets the math
+%  in Times as well.
+%
+\textwidth = 7.0truein
+\textheight = 8.5truein
+\oddsidemargin=-0.1truein
+\evensidemargin=-0.1truein
+\topmargin=0.1truein
+%\notename{UCD/IIRPA} \notenumber{92-24}
+
+\begin{document}
+%\null
+%\vspace{-2cm}
+%\hbox to \hsize{\hfill UCD/IIRPA~92-24}
+
+%\begin{center}{{\twelvebf Notes on Abstract Algebra}}
+%		\vglue 1.0cm
+% 	       {\tenrm JOHN R.\,\,SMITH\\}
+%	       {email: jrsmith@ucdavis.edu\\}
+%		\vglue 0.25cm
+%	        \baselineskip=13pt
+%	       {\tenit Physics Department\\
+%	        University of California, Davis\\}
+%                 \baselineskip=12pt
+%                 {\tenit Davis, CA 95616-8677, USA\\}
+%		\vglue 0.5cm
+%                 {\rm April 14, 2019 \\}
+%\end{center}
+
+%
+%\newmathalphabet{\oldcal}
+%\addtoversion{times}{\oldcal}{cmsy}{m}{n}
+\newcommand{\unit}[1]{\mbox{\elevenit #1}}
+\newcommand{\subs}[1]{\mbox{\scriptsize\elevenit #1}}
+\newcommand{\sign}{\text{sign}}
+\def\Q2{$Q^2$}
+\def\sgp{$\sigma_{\gamma p}\:$}
+\mathchardef\Lcur="324C
+\def\crfive{\cr\noalign{\vskip 5pt}}
+\def\crten{\cr\noalign{\vskip 10pt}}
+\def\cofac{\hbox{cofactor}}
+\def\gij{g_{ij}}
+\def\gijinv{g^{ij}}
+\def\gstar{\overline{g}_{\alpha\beta}}
+\def\Kronij{\delta^j_i}
+\def\Z{\mathbb{Z}}
+\def\F{\mathbb{F}}
+\def\R{\mathbb{R}}
+\def\L{\mathbb{L}}
+\def\C{\mathbb{C}}
+\def\a{\mathfrak{a}}
+\def\b{\mathfrak{b}}
+\def\c{\mathfrak{c}}
+\def\c{\mathfrak{c}}
+\def\r{\mathfrak{r}}
+\def\o{\mathfrak{0}}
+\def\half{{1\over 2}}
+\def\gab{g_{\alpha\beta}}
+\def\gabinv{g^{\alpha\beta}}
+\def\gmunu{g_{\mu\nu}}
+\def\gmunuinv{g^{\mu\nu}}
+\def\gmu{\gamma^\mu}
+\def\gmudag{\gamma^{\mu\dag}}
+\def\gnu{\gamma^\nu}
+\def\gmuc{\gamma_\mu}
+\def\gnuc{\gamma_\nu}
+\def\gzero{\gamma^0}
+\def\gone{\gamma^1}
+\def\gtwo{\gamma^2}
+\def\gthree{\gamma^3}
+\def\gfive{\gamma_5}
+\def\gfive{\gamma_5}
+\def\gzeroc{\gamma_0}
+\def\gonec{\gamma_1}
+\def\gtwoc{\gamma_2}
+\def\gthreec{\gamma_3}
+\def\qsq{{Q^2\over4E_1^2}}
+\def\qr2{{Q^2\over2}}
+\def\q2{{Q^2}}
+\def\hy{\hat{y}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bearray{\begin{eqnarray*}}
+\def\eearray{\end{eqnarray*}}
+\def\Var{\hbox{Var}}
+\def\char{\hbox{char}}
+
+\def\mslim{\qopname\relax m{l.i.m}}
+
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\braket}[2]{\langle #1|#2\rangle}
+\newcommand{\Tr}{{\rm Tr}}
+\newcommand{\goes}{\rightarrow}
+\newcommand{\define}{\overset{\Delta}{=} }
+\newcommand{\ninfty}{n\rightarrow\infty}
+\newcommand{\Rwp}{$\overset{\hbox{R}_{wp1}}{\sim}$}
+\newcommand{\Rms}{$\overset{\hbox{R}_{ms}}{\sim}$}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.65em width0.4em depth0.20em\fi}
+      %\vrule height0.75em width0.5em depth0.25em\fi}
+      
+\newcommand\xqed[1]{%
+  \leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
+  \quad\hbox{#1}}
+\newcommand\demo{\xqed{$\triangle$}}      
+ 
+
+
+%\maketitle
+
+%some definitions
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\textwidth}{17cm}
+%\setlength{\topmargin}{-3cm}
+%\setlength{\textheight}{25cm}
+%\setlength{\unitlength}{1mm}
+%\hsize=6.0 true in
+%\vsize=8.40 true in
+%\pagestyle{plain}
+
+\parindent = 0.cm
+%\vglue 0.3cm
+%\rightskip=3pc
+%\leftskip=3pc
+\twelverm
+\baselineskip=14pt
+\noindent
+
+%\input /Users/johnrsmith/tex/inputs/phyzzx.tex
+%\input /Users/johnrsmith/tex/inputs/myphyx.tex
+%$$p(x,D)\psi(x) = {1\over(2\pi)^n}\int_{R^n}\int_{K^n} e^{i k\cdot x}p(x,k)e^{-i k\cdot y}\,d^nk\psi(y)\,d^ny,\eqno(8)$$
+%\begin{equation}p(x,D)\psi(x) = {1\over(2\pi)^n}\int_{R^n}\int_{K^n} e^{i k\cdot x}p(x,k)e^{-i k\cdot y}\,d^nk\psi(y)\,d^ny,\label{eqn:symbol}\end{equation}
+%Eq.[\ref{eqn:symbol}]
+%\begin{equation*}p(x,D)\psi(x) = {1\over(2\pi)^n}\int_{R^n}\int_{K^n} e^{i k\cdot x}p(x,k)e^{-i k\cdot y}\,d^nk\psi(y)\,d^ny,\end{equation*}
+
+%\input Introduction.tex
+
+%\input{Logic.tex}
+%\input{EquivalenceRelations.tex}
+%\input{SubGroups.tex}
+%\input{FermatLittleTheorem.tex}
+%\input{ChineseRemainder.tex}
+%\input{Fields.tex}
+%\input{FiniteFields.tex}
+%\input{Descartes.tex}
+%\input{Determinants.tex}
+%\input{Vandermonde.tex}
+%\input{Sylvester.tex}
+%\input{Geometry.tex}
+%\input{ApplicationsInMechanics.tex}
+%\input{Algorithm.tex}
+%\input{FourOutbounds.tex}
+\input{Chapter1.tex}
+\clearpage
+
+%\input{Appendices.tex}
+%\input{Acknowledgements.tex}
+%\clearpage
+
+%\begin{thebibliography}{9}
+%\bibitem{Schreier and Sperner} {O. Schreier and F. Sperner,``Introduction to Modern Algebra and Matrix Theory'', Second Edition, Chelsea Publishing, (1959).}
+% \bibitem{Protter}{M.H. Protter and C.B. Morrey, ``A First Course in Real Analysis'', Springer-Verlag, Inc., New York (1977).}
+% \bibitem{Hall}{F. M. Hall, ``An Introduction to Abstract Algebra'', Volume 2, Cambridge University Press, (1969).}
+% \bibitem{Stensby}{John Stensby, ``EE603 Class Notes'', \url{http://www.ece.uah.edu/courses/ee385/}, University of Alabama, Huntsville (2016).}
+% \bibitem{Baudoin}{Fabrice Baudoin,``Stochastic Processes and Brownian Motion'',\url{http://www.math.purdue.edu/~fbaudoin/MA539.pdf}, Purdue University, Indiana (2010).}
+% \bibitem{vanZanten}{Harry van Zanten,``An Introduction to Stochastic Processes in Continuous Time'', \url{http://www.math.vu.nl/sto/onderwijs/sp/sp_2007.pdf}, University of Leiden (2007).}
+% \bibitem{Weiner1}{Howard Weiner, UC Davis Mathematics Department, private communication (2007-2017).}
+% \bibitem{Mahalanobis}{Mahalanobis, Prasanta Chandra (1936).``On the generalised distance in statistics'', Proceedings of the National Institute of Sciences of India. 2 (1): 49–55.}
+% \bibitem{Einstein}{Albert Einstein, ``Investigations on the Theory of the Brownian Movement'', Dover Publications, Inc.(1956).}
+% \bibitem {Ross1} {Sheldon Ross, ``A First Course in Probability'', First Edition, Macmillan Publishers Co, Inc., New York, NY (1976).}
+% \bibitem {Ross2} {Sheldon Ross, ``Introduction to Probability Models'', Sixth Edition, Academic Press, San Diego, CA  (1997).}
+% \bibitem{Parzen}{Emanuel Parzen, ``Stochastic Processes'', Holden-Day, Inc., San Francisco, CA (1962).}
+% \bibitem{Medhi}{Jyotiprasad Medhi, ``Stochastic Processes'', Wiley Eastern Limited, New Delhi (1983).} 
+% \bibitem{Jazwinski}{Andrew H. Jazwinski,``Stochastic Processes and Filtering Theory'', Dover Publications, Inc., Mineola, NY (2007).}
+% \bibitem{Wiener1}{Norbert Wiener, ``Cybernetics: or Control and Communication in the Animal and the Machine'', The MIT Press, Cambridge, MA (1948).}
+% \bibitem{Wiener2}{Norbert Wiener,``Extrapolation, Interpolation, and Smoothing of Stationary Time Series with Engineering Applications'', First Paperback Edition, The MIT Press, Cambridge, MA (1964). }  
+% \bibitem{Wiener3}{Norbert Wiener, ``Generalized Harmonic Analysis'', Acta Mathematica, V. 55, p. 117 (1930).}  
+% \bibitem{Oskendal1}{Bernt  {\O}skendal, ``Stochastic Differential Equations, An Introduction with Applications'', Third Edition, Springer-Verlag, Berlin (1992).}
+% \bibitem{Oskendal2}{Bernt  {\O}skendal, ``Stochastic Differential Equations, An Introduction with Applications'', Sixth Edition, Springer-Verlag, Berlin (2005).}
+% \bibitem{Doob}{J. L. Doob, ``Stochastic Processes'', John Wiley \& Sons, Inc., New York, (1953).}
+% \bibitem{Sjogren}{Lennart Sjogren. ``Brownian Motion: Langevin Equation'', Chapter 6, \url{http://physics.gu.se/~frtbm/joomla/media/mydocs/LennartSjogren/kap6.pdf}}
+% \bibitem{CalTech}{``Statistical Mechanics'', Physics 127b \url{http://www.cmp.caltech.edu/~mcc/Ph127/b/Lecture16.pdf}}
+%\end{thebibliography}
+
+%\begin{description}
+%\elevenitem[\elevenit Reflexive.] Since $x = e^{-1}xe$, x is conjugate to itself.
+%\elevenitem[\elevenit Symmetric.] If $y=g^{-1}xg$ we have $x=gyg^{-1} = g^{-1})^{-1}y g^{-1}$.
+%\elevenitem[\elevenit Transitive.] If $y=g^{-1}xg$ and $z=h^{-1}yh$ we have $z=h^{-1}g^{-1}xgh=(gh)^{-1}x(gh).$
+%\end{description}
+
+%\begin{eqnarray*}
+%   P_1 & = & (E_1,0,0,-E_1),      \\
+%   P_2 & = & (E_2,E_2\sin\theta\cos\phi,E_2\sin\theta\sin\phi,
+%               -E_2\cos\theta),   \\
+%   P_3 & = & (E_3,0,0,\beta E_3),      \\
+%   q   & = & (E_1 - E_2,-E_2\sin\theta\cos\phi,-E_2\sin\theta\sin\phi,
+%                    E_2\cos\theta - E_1).
+%  \end{eqnarray*}
+
+%\begin{figure*}[hb]
+%\epsfysize=6cm %%%% whatever vertical size you want in cm or inches
+%\centerline{\epsfbox{user$1:[smith.tex.eps]feyn.eps}}
+%\caption[fig1]{Definition of Kinematic Variables.}
+%\label{fig:feyn}
+%\end{figure*}
+
+%  \begin{eqnarray*}
+%   y\     & \approx & 1 - {E_2\over E_1} {(1+\cos\theta)\over2}, \\
+%    \qsq \ & \approx & {E_2\over E_1}{(1-\cos\theta)\over2}, \\
+%    x      & \approx & {Q^2\over sy}.
+%  \end{eqnarray*}
+
+%\[ \begin{array}{lll} 
+%  {\cal M}^{++}=({\cal M}^{22} + {\cal M}^{11})/2, 
+%& {\cal M}^{+0}=({\cal M}^{23} -i{\cal M}^{13})/\sqrt{2},
+%& {\cal M}^{+-}=({\cal M}^{22} - {\cal M}^{11})/2, \\ [8pt]
+%  {\cal M}^{0+}=({\cal M}^{32} +i{\cal M}^{31})/\sqrt{2}, 
+%& {\cal M}^{00}= {\cal M}^{33}, 
+%& {\cal M}^{0-}=({\cal M}^{32} -i{\cal M}^{31})/\sqrt{2}, \\ [8pt]
+%  {\cal M}^{-+}=({\cal M}^{22} - {\cal M}^{11})/2, 
+%& {\cal M}^{-0}=({\cal M}^{23} +i{\cal M}^{13})/\sqrt{2}, 
+%& {\cal M}^{--}=({\cal M}^{22} + {\cal M}^{11})/2. \\ [8pt]
+%\end{array} \] 
+
+%\[ \begin{array}{lll} `
+%  {\cal M}^{++}=({\cal M}^{22} + {\cal M}^{11})/2, 
+%& {\cal M}^{+0}= {\cal M}^{23}/\sqrt{2},
+%& {\cal M}^{+-}=({\cal M}^{22} - {\cal M}^{11})/2, \\ [8pt]
+%  {\cal M}^{0+}= {\cal M}^{32}/\sqrt{2}, 
+%& {\cal M}^{00}= {\cal M}^{33}, 
+%& {\cal M}^{0-}= {\cal M}^{32}/\sqrt{2}, \\ [8pt]
+%  {\cal M}^{-+}=({\cal M}^{22} - {\cal M}^{11})/2, 
+%& {\cal M}^{-0}= {\cal M}^{23}/\sqrt{2}, 
+%& {\cal M}^{--}=({\cal M}^{22} + {\cal M}^{11})/2. 
+%\end{array} \]
+%
+%\begin{thebibliography}{99}
+%\bibitem{BCDMS} J.J.Aubert et al., EMC Collaboration,
+% Nucl.Phys. B259(1985)189;\\
+% A.C.Benvenuti et al., BCDMS Collaboration, Phys.Lett.B223(1989)485``
+%\bibitem{kaiserf}     F. Eisele, {\em First Results from the H1
+%Experiment at HERA}, and
+%                      F. Brasse, {\em The H1 Detector at HERA},
+%                      Invited talks, Proceedings of the
+%            26th International Conference on High Energy Physics,
+%                   Dallas (1992) and DESY preprint 92-140 (1992)
+%\bibitem{H1-249} I.\, Abt, J.R.\,Smith, {\em MC Upgrades to Study
+%Untagged Events}, H1 Internal Note H1-249, (1992).
+%H1-249 considered only the diagonal elements of the Photon Flux
+%for photons coupled to Spin-1/2 particles.
+%\end{thebibliography}
+ %
+ \end{document}

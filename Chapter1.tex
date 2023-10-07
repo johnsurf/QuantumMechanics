@@ -1,0 +1,28 @@
+\section{The Operator Approach to the Harmonic Oscillator}
+The Hamiltonian for the one-dimensional harmonic oscillator is given by
+\begin{equation}
+H = {p^2\over2m} + \half k q^2
+\end{equation}
+
+The quantum mechanical commutation relations for the operators $p$ and $q$ is 
+\begin{equation}[q,p] = i\hbar
+\end{equation}
+
+Define two operators $a$ and $a^\dagger$ as follows:
+
+\begin{eqnarray*}
+a &=& \sqrt{m\omega/2\hbar}q + ip/\sqrt{2m\hbar\omega}\\
+a^\dagger &=& \sqrt{m\omega/2\hbar}q - ip/\sqrt{2m\hbar\omega}\\
+\end{eqnarray*}
+where $\omega = \sqrt{k/m}$ is the classical angular frequency of the harmonic oscillator.\\
+
+Form the product
+\begin{eqnarray*}
+ \hbar\omega a^\dagger a &=& \hbar\omega \bigg( \sqrt{ {m\omega\over 2\hbar}} q  - {ip\over\sqrt{2m\hbar\omega}}\bigg) \bigg( \sqrt{ {m\omega\over 2\hbar}} q  + {ip\over\sqrt{2m\hbar\omega}}\bigg)\\
+  &=&  {p^2\over2m} + \half k q^2  +{i\omega\over2}(qp - pq)\\
+  &=& H - \half \hbar\omega 
+ \end{eqnarray*}
+ 
+ Using the above we can rewrite the Hamiltonian for the one dimensional harmonic oscillator as
+ 
+ \[H = \hbar\omega(a^\dagger a + \half)\]
